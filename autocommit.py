@@ -9,7 +9,7 @@ filelist = re.findall(r'[0-9]{2}/[0-9]{2}/[0-9]{4}  [0-9]{2}:[0-9]{2} .*? [0-9]+
 daydelta = 1
 
 while 1:
-    pickUpFrom = datetime(2020, 12, 5, randint(0, 24), randint(0, 60), randint(0, 60))
+    pickUpFrom = datetime(2020, 12, 7, randint(0, 23), randint(0, 59), randint(0, 59))
     ls = sp.run("dir", shell = True, capture_output = True)
     newlist = re.findall(r'[0-9]{2}/[0-9]{2}/[0-9]{4}  [0-9]{2}:[0-9]{2} .*? [0-9]+ (\S*)', ls.stdout.decode())
     if newlist != filelist:
