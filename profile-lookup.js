@@ -1,5 +1,6 @@
 // Setup
-var contacts = [{
+var contacts = [
+    {
         "firstName": "Akira",
         "lastName": "Laine",
         "number": "0543236543",
@@ -26,11 +27,12 @@ var contacts = [{
 ];
 
 
-function lookUpProfile(name, prop) {
-    // Only change code below this line
+function lookUpProfile(name, prop){
+// Only change code below this line
     var nameFlag = 0;
     var propFlag = 0;
-    for (var i = 0; i < contacts.length; i++) {
+    var i = 0;
+    while (i < contacts.length) {
         if (contacts[i]['firstName'] == name) {
             nameFlag = 1;
             if (contacts[i].hasOwnProperty(prop)) {
@@ -40,17 +42,18 @@ function lookUpProfile(name, prop) {
             }
         }
 
-        if (propFlag == 0 && nameFlag == 1) {
-            console.log('NSP');
-            return "No such property";
+        i++;
+    }
+    if (propFlag == 0 && nameFlag == 1) {
+        return "No such property";
+    }
 
-        } else if (nameFlag == 0) {
-            console.log('NSC');
-            return "No such contact";
-        }
+    else if (nameFlag == 0) {
+        return "No such contact";
+    }
 
     }
-    // Only change code above this line
-}
+// Only change code above this line
 
-lookUpProfile("Harry", "likes");
+
+lookUpProfile("Akira", "likes");
