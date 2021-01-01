@@ -7,9 +7,10 @@ from random import randint
 ls = sp.run("dir", shell = True, capture_output = True)
 filelist = re.findall(r'[0-9]{2}/[0-9]{2}/[0-9]{4}  [0-9]{2}:[0-9]{2} .*? [0-9]+ (\S*)', ls.stdout.decode())
 daydelta = 1
+print("Autocommit script up and ready to rumble")
 
 while 1:
-    pickUpFrom = datetime(2020, 12, 24, randint(0, 23), randint(0, 59), randint(0, 59))
+    pickUpFrom = datetime(2021, 1, 1, randint(0, 23), randint(0, 59), randint(0, 59))
     ls = sp.run("dir", shell = True, capture_output = True)
     newlist = re.findall(r'[0-9]{2}/[0-9]{2}/[0-9]{4}  [0-9]{2}:[0-9]{2} .*? [0-9]+ (\S*)', ls.stdout.decode())
     if newlist != filelist:
