@@ -10,7 +10,7 @@ daydelta = 1
 print("Autocommit script up and ready to rumble")
 
 while 1:
-    pickUpFrom = datetime(2021, 1, 26, randint(0, 23), randint(0, 59), randint(0, 59))
+    pickUpFrom = datetime(2021, 2, 4, randint(0, 23), randint(0, 59), randint(0, 59))
     ls = sp.run("dir", shell = True, capture_output = True)
     newlist = re.findall(r'[0-9]{2}/[0-9]{2}/[0-9]{4}  [0-9]{2}:[0-9]{2} .*? [0-9]+ (\S*)', ls.stdout.decode())
     if newlist != filelist:
